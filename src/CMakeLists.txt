@@ -1,0 +1,6 @@
+add_library(tiny11maker_lib SHARED lib/main.cpp "lib/exports.cpp")
+if(TINY11LIB_TEST)
+target_compile_definitions(tiny11maker_lib PRIVATE TEST)
+add_executable(tiny11maker_test test/main.cpp)
+target_link_libraries(tiny11maker_test PRIVATE tiny11maker_lib)
+endif()
