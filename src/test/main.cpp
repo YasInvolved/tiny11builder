@@ -7,10 +7,8 @@ int main(void) {
 	std::wcout << L"Paste path to your image here: ";
 	std::wcin >> path;
 	std::wcout << L"\n";
-	HANDLE handle = mountIso(path);
-	if (handle == nullptr) return -1;
-	std::wcout << L"Check if iso is mounted and files are visible\n";
+	InstallerImage image(path);
+	image.mount();
 	system("pause");
-	dismountIso(handle);
 	return 0;
 }

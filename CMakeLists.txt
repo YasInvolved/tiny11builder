@@ -16,4 +16,5 @@ target_link_libraries(tiny11maker_lib PRIVATE virtdisk.lib)
 
 if(TINY11LIB_TEST)
 target_include_directories(tiny11maker_test PRIVATE include)
+set_target_properties(tiny11maker_test PROPERTIES LINK_FLAGS "/MANIFESTUAC:\"level='requireAdministrator' uiAccess='false'\"")
 endif()

@@ -1,4 +1,4 @@
-add_library(tiny11maker_lib SHARED lib/main.cpp "lib/exports.cpp")
+add_library(tiny11maker_lib SHARED lib/main.cpp "lib/image.cpp" "lib/dism.cpp")
 if(TINY11LIB_TEST)
 target_compile_definitions(tiny11maker_lib PRIVATE TEST)
 add_executable(tiny11maker_test test/main.cpp)
