@@ -1,18 +1,12 @@
-#include <map>
-#include <algorithm>
 #include "tiny11maker_lib.h"
+
+// Windows
 #include <virtdisk.h>
 #include <winioctl.h>
+
+// STL
+#include <algorithm>
 #include <optional>
-
-#if defined(TEST)
-#define LOG_TEST(X) std::wcout << L"DEBUG: " << X << L"\n";
-#else
-#define LOG_TEST(X)
-#endif
-
-#define LOG_ERROR(X) std::wcerr << L"ERROR: " << X << L"\n";
-#define LOG_WARNING(X) std::wcerr << L"WARN: " << X << L"\n";
 
 constexpr GUID VIRTUAL_STORAGE_TYPE_VENDOR_MICROSOFT = { 0xEC984AEC, 0xA0F9, 0x47E9, { 0x90, 0x1F, 0x71, 0x41, 0x5A, 0x66, 0x34, 0x5B } };
 

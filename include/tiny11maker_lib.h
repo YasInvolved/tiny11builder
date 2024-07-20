@@ -9,6 +9,15 @@
 #define TINY11MAKER_LIBAPI __declspec(dllimport)
 #endif
 
+#if defined(TEST)
+#define LOG_TEST(X) std::wcout << L"DEBUG: " << X << L"\n";
+#else
+#define LOG_TEST(X)
+#endif
+
+#define LOG_ERROR(X) std::wcerr << L"ERROR: " << X << L"\n";
+#define LOG_WARNING(X) std::wcerr << L"WARN: " << X << L"\n";
+
 struct HandleDeleter {
 	void operator()(HANDLE handle) const {
 		if (handle && handle != INVALID_HANDLE_VALUE) {
